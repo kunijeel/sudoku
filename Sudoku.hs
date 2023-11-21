@@ -38,7 +38,6 @@ blank   =  (== '0')
 sudoku1 :: Grid
 sudoku1 = undefined
 
-
 -- Q2. Grid 타입의 값을 입력받아 위의 스도쿠 예시와 같은 형태의 문자열을
 --     출력하는 함수 display를 작성하시오.
 --      (1) 빈칸은 밑줄(_)로 표시
@@ -54,7 +53,7 @@ sudoku1 = undefined
 -}
 
 display :: Grid -> String
-display = undefined
+display = undefined 
 
  
 -- | 1. Specification
@@ -100,14 +99,41 @@ ungroup          = concat
 group []         = []
 group (x:y:z:xs) = [x,y,z]:group xs
 
--- Q3. solve1은 수도쿠를 직관적으로 푸는 방법에 대한 명세로써
+-- Q3.  solve1 함수가 아래와 같이 작성되었다.
+-- 
+--      solve1 :: Grid -> [Grid]
+--      solve1 = filter valid . expand . choices
+--
+-- Q3-1. choices의 타입은 무엇이며, choices sudoku1의 결과를 작성하시오.
+{-
+
+   A3-1. 
+
+-}
+
+-- Q3-2. expand의 타입은 무엇이며, head . expand . choices $ sudoku1의 결과를 작성하시오.
+{-
+
+   A3-2. 
+
+-}
+
+-- Q3-3. valide의 타입은 무엇이며, valid . head . expand . choices $ sudoku1의 결과를 작성하시오.
+{-
+
+   A3-3. 
+
+-}
+
+
+-- Q4. solve1은 수도쿠를 직관적으로 푸는 방법에 대한 명세로써
 --     작성한 함수이다.
 -- 
 --     이 함수의 수도쿠 풀이 과정을 1단락 이내로 설명하시오.
 
 {-
 
-   A3. 
+   A4. 
 
 -}
 
@@ -164,13 +190,12 @@ safe cm = all ok (rows cm) &&
 
 ok row = nodups [d | [d] <- row]
 
--- Q4. solve2는 수도쿠를 빠르게 풀도록 최적화한 함수이다.
+-- Q5. solve2는 수도쿠를 빠르게 풀도록 최적화한 함수이다.
 -- 
 --     solve1 대비 최적화한 방법을 한가지를 1단락 이내로 설명하시오.
---     (힌트: solve2 함수 코드를 모두 제대로 이해하기 어려울 수 있으므로
---           함수 이름이나 타입으로 추측하여 설명해도 됩니다.)
+--     (solve2에서 사용하는 함수를 모두 이해하지 않아도 됩니다.)
 {-
 
-   A4. 
+   A5. 
 
 -}
